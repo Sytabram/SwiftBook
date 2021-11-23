@@ -146,9 +146,11 @@
                         <outlet property="leagueTextField" destination="Qwm-lN-Kse" id="d2V-aK-3WT"/>
                         <outlet property="nameTextField" destination="9Ms-Uu-Heg" id="WY7-DC-iaX"/>
                         <outlet property="teamTextField" destination="uqw-ia-7EH" id="bWT-BU-ivW"/>
+                        <segue destination="ine-NN-1cz" kind="unwind" identifier="unwindToAthleteTableViewController" unwindAction="unwindToAthleteTableViewController:" id="i3F-F2-BDw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRJ-p2-DTp" sceneMemberID="firstResponder"/>
+                <exit id="ine-NN-1cz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1860" y="139"/>
         </scene>

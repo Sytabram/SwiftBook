@@ -16,10 +16,8 @@ class AthleteFormViewController: UIViewController {
     
     var athlete: Athlete?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        updateView()
-        // Do any additional setup after loading the view.
+    struct PropertyKeys {
+        static let unwindToListSegue = "unwindToAthleteTableViewController"
     }
     
     init?(coder: NSCoder, athlete: Athlete?){
@@ -29,6 +27,12 @@ class AthleteFormViewController: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateView()
+        // Do any additional setup after loading the view.
     }
     
     func updateView () {
@@ -48,6 +52,7 @@ class AthleteFormViewController: UIViewController {
             let team = teamTextField.text else {return}
         
         athlete = Athlete(name: name, age: age, league: league, team: team)
+        performSegue(withIdentifier: PropertyKeys.unwindToListSegue, sender: self)
     }
     /*
     // MARK: - Navigation
